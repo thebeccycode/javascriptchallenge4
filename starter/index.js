@@ -86,3 +86,44 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+
+//total number of months in dataset
+let months = finances.length
+console.log(finances.length);
+
+//total profit over entire period
+let total = 0;
+for (let i=0; i<finances.length; i++){
+    total += finances [i][1]; 
+}
+console.log(total);
+
+
+//total losses over entire period
+
+let losses = 0;
+for (let i = 0; i<finances.length; index++) {
+    losses -= finances.length[i][1];
+    
+}
+console.log(losses);
+
+//average of the changes in profit and losses 
+//this means change each month then average amount 
+
+//which month had greatest increase in profits 
+
+//which month has greatest losses 
+
+//note: "rolling highest number will go down the list
+//and see if the new number is higher than the last
+
+//---------------------------------------------
+
+//EXAMPLE Financial Analysis EXAMPLE
+//Total Months: 25
+//Total: $2561231
+//Average  Change: $-2315.12
+//Greatest Increase in Profits: Feb-2012 ($1926159)
+//Greatest Decrease in Profits: Sep-2013 ($-2196167)
