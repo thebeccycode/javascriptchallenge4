@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
 ['Mar-2010', 322013],
@@ -103,7 +103,7 @@ console.log(total);
 //total losses over entire period
 
 let losses = 0;
-for (let i = 0; i<finances.length; index++) {
+for (let i = 0; i<finances.length; index--) {
     losses -= finances.length[i][1];
     
 }
