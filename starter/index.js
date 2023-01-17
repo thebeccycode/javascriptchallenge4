@@ -90,24 +90,23 @@ let finances = [
 
 //total number of months in dataset
 let months = finances.length
-console.log(finances.length);
+console.log("total months:", finances.length);
 
 //total profit over entire period
 let total = 0;
 for (let i = 0; i < finances.length; i++) {
     total += finances[i][1];
 }
-console.log(total);
+console.log("total:", total);
 
 
 //total losses over entire period
 
-//let losses = 0;
-//for (let i = 0; i<finances.length; index--) {
-// losses -= finances.length[i][1];
-
-//};
-//console.log(losses);
+let losses = 0;
+for (let i = 0; i < finances.length; i--) {
+losses -= finances.length[i][1];
+};
+console.log("total losses over period:", losses);
 
 //average of the changes in profit and losses 
 //this means change each month then average amount 
@@ -124,11 +123,9 @@ for (let i = 0; i < finances.length; i++) {
     totalChange += monthlyChange;
 };
 
-//console.log("months;", numberOfMonths);
-//console.log("total;", totalChange);
-//const averageMonthlyChange = totalChange/numberOfMonths
-//console.log('average change', averageMonthlyChange)
-//console.log("average change", totalChange/numberOfMonths);
+const averageMonthlyChange = totalChange/numberOfMonths
+console.log('average change', averageMonthlyChange)
+console.log("average change", totalChange/numberOfMonths);
 
 
 //which month had greatest increase in profits 
@@ -146,13 +143,13 @@ for (let i = 0; i < finances.length; i++) {
 
     //find highest profit month
     let monthlyDifference = finances[i][1]
-    //console.log('monthly difference', monthlyDifference)
+    console.log('monthly difference', monthlyDifference)
 
-    //console.log('Current highest profit month:', highestProfitMonth)
+    console.log('Current highest profit month:', highestProfitMonth)
     if (monthlyDifference > highestProfitMonth) {
         highestProfitMonth = monthlyDifference   // if this number is greater than highestProfitMonth, then we overwrite that variable with this number
-        //console.log('Higher Number!')
-        //console.log(monthlyDifference)
+        console.log('Higher Number!')
+        console.log(monthlyDifference)
 
         // keep name of this month
         highestProfitMonthName = monthlyName
