@@ -87,6 +87,12 @@ let finances = [
     ['Feb-2017', 671099]
 ];
 
+let differencesArray = []
+for (let i=0; i < finances.length-1; i++){
+let differences = finances[i+1][1] - finances[i][1]
+differencesArray.push(differences)
+};
+//console.log("differences array:", differencesArray.length)
 
 //total number of months in dataset
 let months = finances.length
@@ -103,10 +109,10 @@ console.log("total:", total);
 //total losses over entire period
 
 let losses = 0;
-for (let i = 0; i < finances.length; i--) {
-losses -= finances.length[i][1];
+for (let i = 0; i < finances.length; i++) {
+losses -= finances[i][1];
 };
-console.log("total losses over period:", losses);
+//console.log("total losses over period:", losses);
 
 //average of the changes in profit and losses 
 //this means change each month then average amount 
@@ -115,17 +121,16 @@ console.log("total losses over period:", losses);
 let totalChange = 0; //this is holding total profits/losses
 let numberOfMonths = 0;
 
-for (let i = 0; i < finances.length; i++) {
+for (let i = 0; i < differencesArray.length; i++) {
     //console.log(finances[i][1]);
     numberOfMonths += 1
     // the variable monthlyChange exists within the for loop. This is called variable scope. This variable ONLY exists within the for loop. 
-    let monthlyChange = finances[i][1];
+    let monthlyChange = differencesArray[i];
     totalChange += monthlyChange;
 };
 
 const averageMonthlyChange = totalChange/numberOfMonths
-console.log('average change', averageMonthlyChange)
-console.log("average change", totalChange/numberOfMonths);
+console.log("average change:", averageMonthlyChange);
 
 
 //which month had greatest increase in profits 
@@ -143,28 +148,31 @@ for (let i = 0; i < finances.length; i++) {
 
     //find highest profit month
     let monthlyDifference = finances[i][1]
-    console.log('monthly difference', monthlyDifference)
+    //console.log('monthly difference', monthlyDifference)
 
-    console.log('Current highest profit month:', highestProfitMonth)
+    //console.log('Current highest profit month:', highestProfitMonth)
     if (monthlyDifference > highestProfitMonth) {
         highestProfitMonth = monthlyDifference   // if this number is greater than highestProfitMonth, then we overwrite that variable with this number
-        console.log('Higher Number!')
-        console.log(monthlyDifference)
+        //console.log('Higher Number!')
+        //console.log(monthlyDifference)
 
         // keep name of this month
         highestProfitMonthName = monthlyName
     }
 
     //find lowest profit month
-    console.log('Current lowest losses month:', highestLossesMonth)
+    //console.log('Current lowest losses month:', highestLossesMonth)
     if (monthlyDifference < highestLossesMonth) {
         highestLossesMonth = monthlyDifference
-        console.log('Greater loss!')
-        console.log(monthlyDifference)
+        //console.log('Greater loss!')
+        //console.log(monthlyDifference)
+        highestLossesMonthName = monthlyName
     }
 };
 
 console.log('Highest Profit month:', highestProfitMonthName, "number:", highestProfitMonth)
+
+console.log("highest loss month:", highestLossesMonthName, "number:", highestLossesMonth)
 
 
 
