@@ -9,5 +9,5 @@ The objective of this JavaScript challenge was to derive and manipulate a datase
 
 Screenshot of VSC code with console visible:
 
-(./starter/Screenshot_20230117_102746.png)
+[screenshot:](./starter/Screenshot_20230117_102746.png)
 
